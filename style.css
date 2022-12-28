@@ -3,6 +3,10 @@
 :root {
   --success-color: #2ecc71;
   --error-color: #e74c3c;
+  --check-borderWidth: 3px;
+  --check-height: 15px;
+  --check-width: 8px;
+  --check-borderColor: var(--success-color);
 }
 
 * {
@@ -93,4 +97,20 @@ h2 {
   padding: 10px;
   margin-top: 20px;
   width: 100%;
+}
+
+.check {
+  visibility: hidden;
+  position: absolute;
+  right: 12px;
+  top: 35px;
+  transform: rotate(45deg);
+  height: var(--check-height);
+  width: var(--check-width);
+  border-bottom: var(--check-borderWidth) solid var(--check-borderColor);
+  border-right: var(--check-borderWidth) solid var(--check-borderColor);
+}
+
+.form-control.success .check {
+  visibility: visible;
 }
